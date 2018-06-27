@@ -24,6 +24,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    // get infos of the ipfs peer
     this.ipfs.id((err, res) => {
       if (err) throw err
       this.setState({
@@ -32,6 +33,7 @@ class App extends Component {
         protocol_version: res.protocolVersion
       })
     })
+    // get ethereum accounts, save account and contract to state
     web3.eth.getAccounts((err, accounts) => {
       if (err) throw err
       this.setState({
@@ -44,6 +46,7 @@ class App extends Component {
   addAsset = (event) => {
     event.stopPropagation()
     event.preventDefault()
+    // get the file(I've used images so I can see it but ipfs does not care I think)
     const file = event.target.files[0]
     this.setState({added_file_name: file.name})
     let reader = new window.FileReader()
@@ -52,6 +55,7 @@ class App extends Component {
   }
 
   saveToIpfs = (reader) => {
+    // send data to IPFS and save the hash(ipfs address)
     const buffer = Buffer.from(reader.result)
     this.ipfs.add(buffer)
       .then((response) => {
@@ -66,7 +70,7 @@ class App extends Component {
   submitHashToContract(event) {
     event.stopPropagation()
     event.preventDefault()
-    console.log(contract)
+    // call the smart contract to store the address of the asset on IPFS to the blockchain, store the transaction hash
     contract.methods.addNewAsset(this.state.added_file_name, this.state.added_file_hash)
       .send({from: this.state.account_address}, (err, transactionHash) => {
         if (err) console.error(err)
