@@ -29,6 +29,10 @@ ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin "[\"*\"]"
 
 ipfs config --json API.HTTPHeaders.Access-Control-Allow-Credentials "[\"true\"]"
 
+- start ipfs daemon
+
+ipfs daemon
+
 ### build ethereum contract
 truffle compile
 
