@@ -16,7 +16,7 @@ https://truffleframework.com/ganache/
 
 npm install -g truffle
 
-### install ipfs
+### install ipfs and setup
 https://dist.ipfs.io/#go-ipfs
 
 - set config
@@ -28,3 +28,8 @@ ipfs config Addresses.API /ip4/127.0.0.1/tcp/5001
 ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin "[\"*\"]"
 
 ipfs config --json API.HTTPHeaders.Access-Control-Allow-Credentials "[\"true\"]"
+
+### build ethereum contract
+truffle compile
+
+truffle migrate
