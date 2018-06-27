@@ -6,23 +6,20 @@
 - ipfs
 - ganache
 
-### Install ethereum
+### Install ethereum with homebrew(mac os x)
 brew tap ethereum/ethereum
 
 brew install ethereum
 
-### install ganache-cli 
+### install ganache & truffle
 https://truffleframework.com/ganache/
 
-npm install ganache-cli
+npm install -g truffle
 
 ### install ipfs
 https://dist.ipfs.io/#go-ipfs
-- check config
 
-ipfs config Addresses.API
-
-- If output not /ip4/127.0.0.1/tcp/5001 set ipfs config
+- set config
 
 ipfs config Addresses.API /ip4/127.0.0.1/tcp/5001
 

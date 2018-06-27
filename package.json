@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "ipfs-api": "^22.1.1"
+    "ipfs-api": "^22.1.1",
+    "web3": "^1.0.0-beta.34"
   }
 }

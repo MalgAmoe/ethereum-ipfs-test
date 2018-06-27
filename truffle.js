@@ -1,4 +1,4 @@
-// using ganache local networkm
+// using ganache local network
 
 module.exports = {
   networks: {
